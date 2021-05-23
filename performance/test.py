@@ -14,7 +14,7 @@ def npStdDev(a):
     return np.std(a)
 
 def test():
-    num = 10000
+    num = 1000000
     a1 = [float(v) for v in range(num)]
     t_py = time.time()
     py_result = pyStdDev(a1)
@@ -47,7 +47,6 @@ def test():
 
     # ------------------------
     print("*"*30)
-    # a4 = np.arange(1e6)
     a4 = np.arange(num)
     t_cy_opt_np = time.time()
     print("t_cy_opt_np: ", time.time()-t_cy_opt_np)
@@ -55,7 +54,6 @@ def test():
 
     # ------------------------
     print("*"*30)
-    # a5 = np.arange(1e4) #np.arange(num)
     a5 = np.arange(float(num))
     print("dtype: ",str(a5.dtype))
     t_c = time.time()
@@ -63,8 +61,17 @@ def test():
     print("t_c: ", time.time()-t_c)
     print("c result: ", c_result)
 
-    res = cyStdDev.shannon_entropy_v2(np.array([10.0, 20]))
-    print("res: ", res)
+    # res = cyStdDev.shannon_entropy_v2(np.array([10.0, 20]))
+    # print("res: ", res)
+
+    print("*"*30)
+    import torch
+    a6 = np.arange(float(num))
+    a6 = torch.from_numpy(a6)
+    t_troch = time.time()
+    torch_result = cyStdDev.torchStdDev(a6)
+    print("t_torch: ", time.time()-t_troch)
+    print("torch result: ", torch_result)
 
 if __name__=="__main__":
     test()

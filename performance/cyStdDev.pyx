@@ -10,6 +10,10 @@ import numpy as np
 def npStdDev(a):
     return np.std(a)
 
+import torch
+def torchStdDev(a):
+    return torch.std(a)
+
 
 cimport numpy as cnp
 from libc.math cimport log as clog

@@ -1708,12 +1708,14 @@ static const char __pyx_k_sqrt[] = "sqrt";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_numpy[] = "numpy";
 static const char __pyx_k_range[] = "range";
+static const char __pyx_k_torch[] = "torch";
 static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_cStdDev[] = "cStdDev";
 static const char __pyx_k_cyStdDev[] = "cyStdDev";
 static const char __pyx_k_npStdDev[] = "npStdDev";
 static const char __pyx_k_ImportError[] = "ImportError";
 static const char __pyx_k_cyOptStdDev[] = "cyOptStdDev";
+static const char __pyx_k_torchStdDev[] = "torchStdDev";
 static const char __pyx_k_cyStdDev_pyx[] = "cyStdDev.pyx";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_shannon_entropy_v2[] = "shannon_entropy_v2";
@@ -1747,14 +1749,17 @@ static PyObject *__pyx_n_s_size;
 static PyObject *__pyx_n_s_sqrt;
 static PyObject *__pyx_n_s_std;
 static PyObject *__pyx_n_s_test;
+static PyObject *__pyx_n_s_torch;
+static PyObject *__pyx_n_s_torchStdDev;
 static PyObject *__pyx_n_s_v;
 static PyObject *__pyx_n_s_w;
 static PyObject *__pyx_n_s_wSq;
 static PyObject *__pyx_pf_8cyStdDev_cyStdDev(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a); /* proto */
 static PyObject *__pyx_pf_8cyStdDev_2npStdDev(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a); /* proto */
-static PyObject *__pyx_pf_8cyStdDev_4shannon_entropy_v2(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_p_x); /* proto */
-static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_a); /* proto */
-static PyObject *__pyx_pf_8cyStdDev_8cStdDev(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_a); /* proto */
+static PyObject *__pyx_pf_8cyStdDev_4torchStdDev(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a); /* proto */
+static PyObject *__pyx_pf_8cyStdDev_6shannon_entropy_v2(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_p_x); /* proto */
+static PyObject *__pyx_pf_8cyStdDev_8cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_a); /* proto */
+static PyObject *__pyx_pf_8cyStdDev_10cStdDev(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_a); /* proto */
 static PyObject *__pyx_int_2;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
@@ -1763,11 +1768,13 @@ static PyObject *__pyx_tuple__5;
 static PyObject *__pyx_tuple__7;
 static PyObject *__pyx_tuple__9;
 static PyObject *__pyx_tuple__11;
+static PyObject *__pyx_tuple__13;
 static PyObject *__pyx_codeobj__4;
 static PyObject *__pyx_codeobj__6;
 static PyObject *__pyx_codeobj__8;
 static PyObject *__pyx_codeobj__10;
 static PyObject *__pyx_codeobj__12;
+static PyObject *__pyx_codeobj__14;
 /* Late includes */
 
 /* "cyStdDev.pyx":3
@@ -1973,7 +1980,7 @@ static PyObject *__pyx_pf_8cyStdDev_2npStdDev(CYTHON_UNUSED PyObject *__pyx_self
  * def npStdDev(a):
  *     return np.std(a)             # <<<<<<<<<<<<<<
  * 
- * 
+ * import torch
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 11, __pyx_L1_error)
@@ -2021,7 +2028,93 @@ static PyObject *__pyx_pf_8cyStdDev_2npStdDev(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "cyStdDev.pyx":17
+/* "cyStdDev.pyx":14
+ * 
+ * import torch
+ * def torchStdDev(a):             # <<<<<<<<<<<<<<
+ *     return torch.std(a)
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_8cyStdDev_5torchStdDev(PyObject *__pyx_self, PyObject *__pyx_v_a); /*proto*/
+static PyMethodDef __pyx_mdef_8cyStdDev_5torchStdDev = {"torchStdDev", (PyCFunction)__pyx_pw_8cyStdDev_5torchStdDev, METH_O, 0};
+static PyObject *__pyx_pw_8cyStdDev_5torchStdDev(PyObject *__pyx_self, PyObject *__pyx_v_a) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("torchStdDev (wrapper)", 0);
+  __pyx_r = __pyx_pf_8cyStdDev_4torchStdDev(__pyx_self, ((PyObject *)__pyx_v_a));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_8cyStdDev_4torchStdDev(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_a) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("torchStdDev", 0);
+
+  /* "cyStdDev.pyx":15
+ * import torch
+ * def torchStdDev(a):
+ *     return torch.std(a)             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_torch); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_std); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = NULL;
+  if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_2)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_v_a) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_a);
+  __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "cyStdDev.pyx":14
+ * 
+ * import torch
+ * def torchStdDev(a):             # <<<<<<<<<<<<<<
+ *     return torch.std(a)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_AddTraceback("cyStdDev.torchStdDev", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cyStdDev.pyx":21
  * from libc.math cimport log as clog
  * 
  * def shannon_entropy_v2(cnp.ndarray[double] p_x):             # <<<<<<<<<<<<<<
@@ -2030,17 +2123,17 @@ static PyObject *__pyx_pf_8cyStdDev_2npStdDev(CYTHON_UNUSED PyObject *__pyx_self
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8cyStdDev_5shannon_entropy_v2(PyObject *__pyx_self, PyObject *__pyx_v_p_x); /*proto*/
-static PyMethodDef __pyx_mdef_8cyStdDev_5shannon_entropy_v2 = {"shannon_entropy_v2", (PyCFunction)__pyx_pw_8cyStdDev_5shannon_entropy_v2, METH_O, 0};
-static PyObject *__pyx_pw_8cyStdDev_5shannon_entropy_v2(PyObject *__pyx_self, PyObject *__pyx_v_p_x) {
+static PyObject *__pyx_pw_8cyStdDev_7shannon_entropy_v2(PyObject *__pyx_self, PyObject *__pyx_v_p_x); /*proto*/
+static PyMethodDef __pyx_mdef_8cyStdDev_7shannon_entropy_v2 = {"shannon_entropy_v2", (PyCFunction)__pyx_pw_8cyStdDev_7shannon_entropy_v2, METH_O, 0};
+static PyObject *__pyx_pw_8cyStdDev_7shannon_entropy_v2(PyObject *__pyx_self, PyObject *__pyx_v_p_x) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("shannon_entropy_v2 (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_x), __pyx_ptype_5numpy_ndarray, 1, "p_x", 0))) __PYX_ERR(0, 17, __pyx_L1_error)
-  __pyx_r = __pyx_pf_8cyStdDev_4shannon_entropy_v2(__pyx_self, ((PyArrayObject *)__pyx_v_p_x));
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p_x), __pyx_ptype_5numpy_ndarray, 1, "p_x", 0))) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_r = __pyx_pf_8cyStdDev_6shannon_entropy_v2(__pyx_self, ((PyArrayObject *)__pyx_v_p_x));
 
   /* function exit code */
   goto __pyx_L0;
@@ -2051,7 +2144,7 @@ static PyObject *__pyx_pw_8cyStdDev_5shannon_entropy_v2(PyObject *__pyx_self, Py
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8cyStdDev_4shannon_entropy_v2(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_p_x) {
+static PyObject *__pyx_pf_8cyStdDev_6shannon_entropy_v2(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_p_x) {
   double __pyx_v_res;
   int __pyx_v_n;
   int __pyx_v_i;
@@ -2076,11 +2169,11 @@ static PyObject *__pyx_pf_8cyStdDev_4shannon_entropy_v2(CYTHON_UNUSED PyObject *
   __pyx_pybuffernd_p_x.rcbuffer = &__pyx_pybuffer_p_x;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_p_x.rcbuffer->pybuffer, (PyObject*)__pyx_v_p_x, &__Pyx_TypeInfo_double, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 17, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_p_x.rcbuffer->pybuffer, (PyObject*)__pyx_v_p_x, &__Pyx_TypeInfo_double, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 21, __pyx_L1_error)
   }
   __pyx_pybuffernd_p_x.diminfo[0].strides = __pyx_pybuffernd_p_x.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_p_x.diminfo[0].shape = __pyx_pybuffernd_p_x.rcbuffer->pybuffer.shape[0];
 
-  /* "cyStdDev.pyx":18
+  /* "cyStdDev.pyx":22
  * 
  * def shannon_entropy_v2(cnp.ndarray[double] p_x):
  *     cdef double res = 0.0             # <<<<<<<<<<<<<<
@@ -2089,7 +2182,7 @@ static PyObject *__pyx_pf_8cyStdDev_4shannon_entropy_v2(CYTHON_UNUSED PyObject *
  */
   __pyx_v_res = 0.0;
 
-  /* "cyStdDev.pyx":19
+  /* "cyStdDev.pyx":23
  * def shannon_entropy_v2(cnp.ndarray[double] p_x):
  *     cdef double res = 0.0
  *     cdef int n = p_x.shape[0]             # <<<<<<<<<<<<<<
@@ -2098,7 +2191,7 @@ static PyObject *__pyx_pf_8cyStdDev_4shannon_entropy_v2(CYTHON_UNUSED PyObject *
  */
   __pyx_v_n = (__pyx_v_p_x->dimensions[0]);
 
-  /* "cyStdDev.pyx":21
+  /* "cyStdDev.pyx":25
  *     cdef int n = p_x.shape[0]
  *     cdef int i
  *     for i in range(n):             # <<<<<<<<<<<<<<
@@ -2110,7 +2203,7 @@ static PyObject *__pyx_pf_8cyStdDev_4shannon_entropy_v2(CYTHON_UNUSED PyObject *
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "cyStdDev.pyx":22
+    /* "cyStdDev.pyx":26
  *     cdef int i
  *     for i in range(n):
  *         res += p_x[i] * clog(p_x[i])             # <<<<<<<<<<<<<<
@@ -2125,7 +2218,7 @@ static PyObject *__pyx_pf_8cyStdDev_4shannon_entropy_v2(CYTHON_UNUSED PyObject *
     } else if (unlikely(__pyx_t_4 >= __pyx_pybuffernd_p_x.diminfo[0].shape)) __pyx_t_5 = 0;
     if (unlikely(__pyx_t_5 != -1)) {
       __Pyx_RaiseBufferIndexError(__pyx_t_5);
-      __PYX_ERR(0, 22, __pyx_L1_error)
+      __PYX_ERR(0, 26, __pyx_L1_error)
     }
     __pyx_t_6 = __pyx_v_i;
     __pyx_t_5 = -1;
@@ -2135,12 +2228,12 @@ static PyObject *__pyx_pf_8cyStdDev_4shannon_entropy_v2(CYTHON_UNUSED PyObject *
     } else if (unlikely(__pyx_t_6 >= __pyx_pybuffernd_p_x.diminfo[0].shape)) __pyx_t_5 = 0;
     if (unlikely(__pyx_t_5 != -1)) {
       __Pyx_RaiseBufferIndexError(__pyx_t_5);
-      __PYX_ERR(0, 22, __pyx_L1_error)
+      __PYX_ERR(0, 26, __pyx_L1_error)
     }
     __pyx_v_res = (__pyx_v_res + ((*__Pyx_BufPtrStrided1d(double *, __pyx_pybuffernd_p_x.rcbuffer->pybuffer.buf, __pyx_t_4, __pyx_pybuffernd_p_x.diminfo[0].strides)) * log((*__Pyx_BufPtrStrided1d(double *, __pyx_pybuffernd_p_x.rcbuffer->pybuffer.buf, __pyx_t_6, __pyx_pybuffernd_p_x.diminfo[0].strides)))));
   }
 
-  /* "cyStdDev.pyx":23
+  /* "cyStdDev.pyx":27
  *     for i in range(n):
  *         res += p_x[i] * clog(p_x[i])
  *     return -res             # <<<<<<<<<<<<<<
@@ -2148,13 +2241,13 @@ static PyObject *__pyx_pf_8cyStdDev_4shannon_entropy_v2(CYTHON_UNUSED PyObject *
  * cdef extern from "math.h":
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_7 = PyFloat_FromDouble((-__pyx_v_res)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_7 = PyFloat_FromDouble((-__pyx_v_res)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_r = __pyx_t_7;
   __pyx_t_7 = 0;
   goto __pyx_L0;
 
-  /* "cyStdDev.pyx":17
+  /* "cyStdDev.pyx":21
  * from libc.math cimport log as clog
  * 
  * def shannon_entropy_v2(cnp.ndarray[double] p_x):             # <<<<<<<<<<<<<<
@@ -2182,7 +2275,7 @@ static PyObject *__pyx_pf_8cyStdDev_4shannon_entropy_v2(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "cyStdDev.pyx":33
+/* "cyStdDev.pyx":37
  * 
  * @cython.boundscheck(False)
  * def cyOptStdDev(ndarray[np.float64_t, ndim=1] a not None):             # <<<<<<<<<<<<<<
@@ -2191,17 +2284,17 @@ static PyObject *__pyx_pf_8cyStdDev_4shannon_entropy_v2(CYTHON_UNUSED PyObject *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8cyStdDev_7cyOptStdDev(PyObject *__pyx_self, PyObject *__pyx_v_a); /*proto*/
-static PyMethodDef __pyx_mdef_8cyStdDev_7cyOptStdDev = {"cyOptStdDev", (PyCFunction)__pyx_pw_8cyStdDev_7cyOptStdDev, METH_O, 0};
-static PyObject *__pyx_pw_8cyStdDev_7cyOptStdDev(PyObject *__pyx_self, PyObject *__pyx_v_a) {
+static PyObject *__pyx_pw_8cyStdDev_9cyOptStdDev(PyObject *__pyx_self, PyObject *__pyx_v_a); /*proto*/
+static PyMethodDef __pyx_mdef_8cyStdDev_9cyOptStdDev = {"cyOptStdDev", (PyCFunction)__pyx_pw_8cyStdDev_9cyOptStdDev, METH_O, 0};
+static PyObject *__pyx_pw_8cyStdDev_9cyOptStdDev(PyObject *__pyx_self, PyObject *__pyx_v_a) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("cyOptStdDev (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_a), __pyx_ptype_5numpy_ndarray, 0, "a", 0))) __PYX_ERR(0, 33, __pyx_L1_error)
-  __pyx_r = __pyx_pf_8cyStdDev_6cyOptStdDev(__pyx_self, ((PyArrayObject *)__pyx_v_a));
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_a), __pyx_ptype_5numpy_ndarray, 0, "a", 0))) __PYX_ERR(0, 37, __pyx_L1_error)
+  __pyx_r = __pyx_pf_8cyStdDev_8cyOptStdDev(__pyx_self, ((PyArrayObject *)__pyx_v_a));
 
   /* function exit code */
   goto __pyx_L0;
@@ -2212,7 +2305,7 @@ static PyObject *__pyx_pw_8cyStdDev_7cyOptStdDev(PyObject *__pyx_self, PyObject 
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_a) {
+static PyObject *__pyx_pf_8cyStdDev_8cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_a) {
   Py_ssize_t __pyx_v_i;
   Py_ssize_t __pyx_v_n;
   double __pyx_v_m;
@@ -2236,11 +2329,11 @@ static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_s
   __pyx_pybuffernd_a.rcbuffer = &__pyx_pybuffer_a;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_a.rcbuffer->pybuffer, (PyObject*)__pyx_v_a, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float64_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 33, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_a.rcbuffer->pybuffer, (PyObject*)__pyx_v_a, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float64_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 37, __pyx_L1_error)
   }
   __pyx_pybuffernd_a.diminfo[0].strides = __pyx_pybuffernd_a.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_a.diminfo[0].shape = __pyx_pybuffernd_a.rcbuffer->pybuffer.shape[0];
 
-  /* "cyStdDev.pyx":35
+  /* "cyStdDev.pyx":39
  * def cyOptStdDev(ndarray[np.float64_t, ndim=1] a not None):
  *     cdef Py_ssize_t i
  *     cdef Py_ssize_t n = a.shape[0]             # <<<<<<<<<<<<<<
@@ -2249,7 +2342,7 @@ static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_s
  */
   __pyx_v_n = (__pyx_v_a->dimensions[0]);
 
-  /* "cyStdDev.pyx":36
+  /* "cyStdDev.pyx":40
  *     cdef Py_ssize_t i
  *     cdef Py_ssize_t n = a.shape[0]
  *     cdef double m = 0.0             # <<<<<<<<<<<<<<
@@ -2258,7 +2351,7 @@ static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_s
  */
   __pyx_v_m = 0.0;
 
-  /* "cyStdDev.pyx":37
+  /* "cyStdDev.pyx":41
  *     cdef Py_ssize_t n = a.shape[0]
  *     cdef double m = 0.0
  *     for i in range(n):             # <<<<<<<<<<<<<<
@@ -2270,7 +2363,7 @@ static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_s
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "cyStdDev.pyx":38
+    /* "cyStdDev.pyx":42
  *     cdef double m = 0.0
  *     for i in range(n):
  *         m += a[i]             # <<<<<<<<<<<<<<
@@ -2282,7 +2375,7 @@ static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_s
     __pyx_v_m = (__pyx_v_m + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_a.rcbuffer->pybuffer.buf, __pyx_t_4, __pyx_pybuffernd_a.diminfo[0].strides)));
   }
 
-  /* "cyStdDev.pyx":39
+  /* "cyStdDev.pyx":43
  *     for i in range(n):
  *         m += a[i]
  *     m /= n             # <<<<<<<<<<<<<<
@@ -2291,11 +2384,11 @@ static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_s
  */
   if (unlikely(__pyx_v_n == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 39, __pyx_L1_error)
+    __PYX_ERR(0, 43, __pyx_L1_error)
   }
   __pyx_v_m = (__pyx_v_m / __pyx_v_n);
 
-  /* "cyStdDev.pyx":40
+  /* "cyStdDev.pyx":44
  *         m += a[i]
  *     m /= n
  *     cdef double v = 0.0             # <<<<<<<<<<<<<<
@@ -2304,7 +2397,7 @@ static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_s
  */
   __pyx_v_v = 0.0;
 
-  /* "cyStdDev.pyx":41
+  /* "cyStdDev.pyx":45
  *     m /= n
  *     cdef double v = 0.0
  *     for i in range(n):             # <<<<<<<<<<<<<<
@@ -2316,7 +2409,7 @@ static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_s
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "cyStdDev.pyx":42
+    /* "cyStdDev.pyx":46
  *     cdef double v = 0.0
  *     for i in range(n):
  *         v += (a[i] - m)**2             # <<<<<<<<<<<<<<
@@ -2328,7 +2421,7 @@ static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_s
     __pyx_v_v = (__pyx_v_v + pow(((*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float64_t *, __pyx_pybuffernd_a.rcbuffer->pybuffer.buf, __pyx_t_4, __pyx_pybuffernd_a.diminfo[0].strides)) - __pyx_v_m), 2.0));
   }
 
-  /* "cyStdDev.pyx":43
+  /* "cyStdDev.pyx":47
  *     for i in range(n):
  *         v += (a[i] - m)**2
  *     return sqrt(v / n)             # <<<<<<<<<<<<<<
@@ -2338,15 +2431,15 @@ static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_s
   __Pyx_XDECREF(__pyx_r);
   if (unlikely(__pyx_v_n == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 43, __pyx_L1_error)
+    __PYX_ERR(0, 47, __pyx_L1_error)
   }
-  __pyx_t_5 = PyFloat_FromDouble(sqrt((__pyx_v_v / __pyx_v_n))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(sqrt((__pyx_v_v / __pyx_v_n))); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_r = __pyx_t_5;
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "cyStdDev.pyx":33
+  /* "cyStdDev.pyx":37
  * 
  * @cython.boundscheck(False)
  * def cyOptStdDev(ndarray[np.float64_t, ndim=1] a not None):             # <<<<<<<<<<<<<<
@@ -2374,7 +2467,7 @@ static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "cyStdDev.pyx":48
+/* "cyStdDev.pyx":52
  *     double std_dev(double *arr, size_t siz)
  * 
  * def cStdDev(ndarray[np.float64_t, ndim=1] a not None):             # <<<<<<<<<<<<<<
@@ -2382,17 +2475,17 @@ static PyObject *__pyx_pf_8cyStdDev_6cyOptStdDev(CYTHON_UNUSED PyObject *__pyx_s
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8cyStdDev_9cStdDev(PyObject *__pyx_self, PyObject *__pyx_v_a); /*proto*/
-static PyMethodDef __pyx_mdef_8cyStdDev_9cStdDev = {"cStdDev", (PyCFunction)__pyx_pw_8cyStdDev_9cStdDev, METH_O, 0};
-static PyObject *__pyx_pw_8cyStdDev_9cStdDev(PyObject *__pyx_self, PyObject *__pyx_v_a) {
+static PyObject *__pyx_pw_8cyStdDev_11cStdDev(PyObject *__pyx_self, PyObject *__pyx_v_a); /*proto*/
+static PyMethodDef __pyx_mdef_8cyStdDev_11cStdDev = {"cStdDev", (PyCFunction)__pyx_pw_8cyStdDev_11cStdDev, METH_O, 0};
+static PyObject *__pyx_pw_8cyStdDev_11cStdDev(PyObject *__pyx_self, PyObject *__pyx_v_a) {
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("cStdDev (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_a), __pyx_ptype_5numpy_ndarray, 0, "a", 0))) __PYX_ERR(0, 48, __pyx_L1_error)
-  __pyx_r = __pyx_pf_8cyStdDev_8cStdDev(__pyx_self, ((PyArrayObject *)__pyx_v_a));
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_a), __pyx_ptype_5numpy_ndarray, 0, "a", 0))) __PYX_ERR(0, 52, __pyx_L1_error)
+  __pyx_r = __pyx_pf_8cyStdDev_10cStdDev(__pyx_self, ((PyArrayObject *)__pyx_v_a));
 
   /* function exit code */
   goto __pyx_L0;
@@ -2403,7 +2496,7 @@ static PyObject *__pyx_pw_8cyStdDev_9cStdDev(PyObject *__pyx_self, PyObject *__p
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8cyStdDev_8cStdDev(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_a) {
+static PyObject *__pyx_pf_8cyStdDev_10cStdDev(CYTHON_UNUSED PyObject *__pyx_self, PyArrayObject *__pyx_v_a) {
   __Pyx_LocalBuf_ND __pyx_pybuffernd_a;
   __Pyx_Buffer __pyx_pybuffer_a;
   PyObject *__pyx_r = NULL;
@@ -2420,27 +2513,27 @@ static PyObject *__pyx_pf_8cyStdDev_8cStdDev(CYTHON_UNUSED PyObject *__pyx_self,
   __pyx_pybuffernd_a.rcbuffer = &__pyx_pybuffer_a;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_a.rcbuffer->pybuffer, (PyObject*)__pyx_v_a, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float64_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 48, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_a.rcbuffer->pybuffer, (PyObject*)__pyx_v_a, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float64_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 52, __pyx_L1_error)
   }
   __pyx_pybuffernd_a.diminfo[0].strides = __pyx_pybuffernd_a.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_a.diminfo[0].shape = __pyx_pybuffernd_a.rcbuffer->pybuffer.shape[0];
 
-  /* "cyStdDev.pyx":49
+  /* "cyStdDev.pyx":53
  * 
  * def cStdDev(ndarray[np.float64_t, ndim=1] a not None):
  *     return std_dev(<double*> a.data, a.size)             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_a), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_a), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_2 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_2 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyFloat_FromDouble(std_dev(((double *)__pyx_v_a->data), __pyx_t_2)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(std_dev(((double *)__pyx_v_a->data), __pyx_t_2)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "cyStdDev.pyx":48
+  /* "cyStdDev.pyx":52
  *     double std_dev(double *arr, size_t siz)
  * 
  * def cStdDev(ndarray[np.float64_t, ndim=1] a not None):             # <<<<<<<<<<<<<<
@@ -3558,13 +3651,15 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_sqrt, __pyx_k_sqrt, sizeof(__pyx_k_sqrt), 0, 0, 1, 1},
   {&__pyx_n_s_std, __pyx_k_std, sizeof(__pyx_k_std), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
+  {&__pyx_n_s_torch, __pyx_k_torch, sizeof(__pyx_k_torch), 0, 0, 1, 1},
+  {&__pyx_n_s_torchStdDev, __pyx_k_torchStdDev, sizeof(__pyx_k_torchStdDev), 0, 0, 1, 1},
   {&__pyx_n_s_v, __pyx_k_v, sizeof(__pyx_k_v), 0, 0, 1, 1},
   {&__pyx_n_s_w, __pyx_k_w, sizeof(__pyx_k_w), 0, 0, 1, 1},
   {&__pyx_n_s_wSq, __pyx_k_wSq, sizeof(__pyx_k_wSq), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 25, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(1, 947, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
@@ -3621,40 +3716,52 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__5);
   __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cyStdDev_pyx, __pyx_n_s_npStdDev, 10, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 10, __pyx_L1_error)
 
-  /* "cyStdDev.pyx":17
+  /* "cyStdDev.pyx":14
+ * 
+ * import torch
+ * def torchStdDev(a):             # <<<<<<<<<<<<<<
+ *     return torch.std(a)
+ * 
+ */
+  __pyx_tuple__7 = PyTuple_Pack(1, __pyx_n_s_a); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__7);
+  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cyStdDev_pyx, __pyx_n_s_torchStdDev, 14, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 14, __pyx_L1_error)
+
+  /* "cyStdDev.pyx":21
  * from libc.math cimport log as clog
  * 
  * def shannon_entropy_v2(cnp.ndarray[double] p_x):             # <<<<<<<<<<<<<<
  *     cdef double res = 0.0
  *     cdef int n = p_x.shape[0]
  */
-  __pyx_tuple__7 = PyTuple_Pack(4, __pyx_n_s_p_x, __pyx_n_s_res, __pyx_n_s_n, __pyx_n_s_i); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 17, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__7);
-  __Pyx_GIVEREF(__pyx_tuple__7);
-  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cyStdDev_pyx, __pyx_n_s_shannon_entropy_v2, 17, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(4, __pyx_n_s_p_x, __pyx_n_s_res, __pyx_n_s_n, __pyx_n_s_i); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cyStdDev_pyx, __pyx_n_s_shannon_entropy_v2, 21, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 21, __pyx_L1_error)
 
-  /* "cyStdDev.pyx":33
+  /* "cyStdDev.pyx":37
  * 
  * @cython.boundscheck(False)
  * def cyOptStdDev(ndarray[np.float64_t, ndim=1] a not None):             # <<<<<<<<<<<<<<
  *     cdef Py_ssize_t i
  *     cdef Py_ssize_t n = a.shape[0]
  */
-  __pyx_tuple__9 = PyTuple_Pack(5, __pyx_n_s_a, __pyx_n_s_i, __pyx_n_s_n, __pyx_n_s_m, __pyx_n_s_v); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 33, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__9);
-  __Pyx_GIVEREF(__pyx_tuple__9);
-  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(1, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cyStdDev_pyx, __pyx_n_s_cyOptStdDev, 33, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(5, __pyx_n_s_a, __pyx_n_s_i, __pyx_n_s_n, __pyx_n_s_m, __pyx_n_s_v); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cyStdDev_pyx, __pyx_n_s_cyOptStdDev, 37, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 37, __pyx_L1_error)
 
-  /* "cyStdDev.pyx":48
+  /* "cyStdDev.pyx":52
  *     double std_dev(double *arr, size_t siz)
  * 
  * def cStdDev(ndarray[np.float64_t, ndim=1] a not None):             # <<<<<<<<<<<<<<
  *     return std_dev(<double*> a.data, a.size)
  */
-  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_n_s_a); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 48, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__11);
-  __Pyx_GIVEREF(__pyx_tuple__11);
-  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cyStdDev_pyx, __pyx_n_s_cStdDev, 48, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_n_s_a); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 52, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cyStdDev_pyx, __pyx_n_s_cStdDev, 52, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -4034,39 +4141,63 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_npStdDev, __pyx_t_1) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cyStdDev.pyx":17
+  /* "cyStdDev.pyx":13
+ *     return np.std(a)
+ * 
+ * import torch             # <<<<<<<<<<<<<<
+ * def torchStdDev(a):
+ *     return torch.std(a)
+ */
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_torch, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_torch, __pyx_t_1) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "cyStdDev.pyx":14
+ * 
+ * import torch
+ * def torchStdDev(a):             # <<<<<<<<<<<<<<
+ *     return torch.std(a)
+ * 
+ */
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_8cyStdDev_5torchStdDev, NULL, __pyx_n_s_cyStdDev); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_torchStdDev, __pyx_t_1) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "cyStdDev.pyx":21
  * from libc.math cimport log as clog
  * 
  * def shannon_entropy_v2(cnp.ndarray[double] p_x):             # <<<<<<<<<<<<<<
  *     cdef double res = 0.0
  *     cdef int n = p_x.shape[0]
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_8cyStdDev_5shannon_entropy_v2, NULL, __pyx_n_s_cyStdDev); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_8cyStdDev_7shannon_entropy_v2, NULL, __pyx_n_s_cyStdDev); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_shannon_entropy_v2, __pyx_t_1) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_shannon_entropy_v2, __pyx_t_1) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cyStdDev.pyx":33
+  /* "cyStdDev.pyx":37
  * 
  * @cython.boundscheck(False)
  * def cyOptStdDev(ndarray[np.float64_t, ndim=1] a not None):             # <<<<<<<<<<<<<<
  *     cdef Py_ssize_t i
  *     cdef Py_ssize_t n = a.shape[0]
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_8cyStdDev_7cyOptStdDev, NULL, __pyx_n_s_cyStdDev); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_8cyStdDev_9cyOptStdDev, NULL, __pyx_n_s_cyStdDev); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cyOptStdDev, __pyx_t_1) < 0) __PYX_ERR(0, 33, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cyOptStdDev, __pyx_t_1) < 0) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cyStdDev.pyx":48
+  /* "cyStdDev.pyx":52
  *     double std_dev(double *arr, size_t siz)
  * 
  * def cStdDev(ndarray[np.float64_t, ndim=1] a not None):             # <<<<<<<<<<<<<<
  *     return std_dev(<double*> a.data, a.size)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_8cyStdDev_9cStdDev, NULL, __pyx_n_s_cyStdDev); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_8cyStdDev_11cStdDev, NULL, __pyx_n_s_cyStdDev); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cStdDev, __pyx_t_1) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cStdDev, __pyx_t_1) < 0) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "cyStdDev.pyx":1
